@@ -1,0 +1,37 @@
+---
+const testimonials = [
+  {
+    quote: "SKI Education helped me achieve a competitive MCAT score and gain admission to my dream medical school. The personalized study plan made all the difference.",
+    name: "Sarah M.",
+    location: "Toronto, Canada",
+  },
+  {
+    quote: "The structured approach to MCAT prep was exactly what I needed. My score improved by 12 points after working with SKI.",
+    name: "James K.",
+    location: "Vancouver, Canada",
+  },
+  {
+    quote: "As an international student, I was lost navigating the Canadian medical school process. SKI guided me every step of the way.",
+    name: "Priya R.",
+    location: "Mumbai, India",
+  },
+];
+---
+
+<section class="py-16 px-4 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">What Our Students Say</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Hear from students who achieved their medical education goals</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t) => (
+        <div class="bg-[#f9fafb] border border-gray-200 rounded-xl p-6">
+          <div class="text-yellow-400 text-lg mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="italic text-gray-700 mb-4">"{t.quote}"</p>
+          <p class="font-bold text-[#1e3a5f]">{t.name}</p>
+          <p class="text-sm text-gray-500">{t.location}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

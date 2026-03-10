@@ -1,7 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import Testimonials from '../components/Testimonials.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<BaseLayout title="Home">
-  <h1 class="text-4xl font-bold text-[#1e3a5f] p-8">SKI Education Network</h1>
-  <p class="px-8 text-lg text-gray-600">Your Path to Medical School Starts Here</p>
+<BaseLayout title="Home" description="SKI Education Network - Expert MCAT preparation and medical school admissions consulting for aspiring physicians.">
+  <Hero />
+
+  <!-- Features Section -->
+  <section class="py-16 px-4 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Our Programs</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Comprehensive support for every stage of your medical education journey</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <FeatureCard title="MCAT Preparation" description="Comprehensive study plans, expert tutoring, and practice exams to help you achieve your target MCAT score." href={`${base}/mcat-prep`} icon="📚" />
+      <FeatureCard title="Medical Admissions" description="Strategic guidance for medical school applications, from Caribbean to Canadian programs." href={`${base}/medical-admissions`} icon="🎓" />
+      <FeatureCard title="University Admissions" description="International university placement services across 1,000+ programs in Canada and the US." href={`${base}/university-admissions`} icon="🏫" />
+      <FeatureCard title="Immigration Services" description="Student visas, permanent residency, and immigration support with experienced legal professionals." href={`${base}/immigration`} icon="🌍" />
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <!-- Final CTA -->
+  <section class="bg-[#0d9488] py-16 px-4 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Join thousands of students who have achieved their medical education goals with SKI Education Network.</p>
+    <a href={`${base}/mcat-prep`} class="inline-block bg-white text-[#0d9488] font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Get Started Today</a>
+  </section>
 </BaseLayout>
