@@ -1,0 +1,85 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const quickLinks = [
+  { label: 'MCAT Prep', href: '/mcat-prep' },
+  { label: 'Medical Admissions', href: '/medical-admissions' },
+  { label: 'Sample Exam', href: '/sample-exam' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<footer class="bg-[#1e3a5f] text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: Brand + Tagline -->
+      <div>
+        <h3 class="text-xl font-bold mb-3">SKI Education</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Your pathway to medical school success. Expert MCAT preparation, admissions consulting, and academic support to help you achieve your dreams.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2">
+          {quickLinks.map((link) => (
+            <li>
+              <a
+                href={`${base}${link.href}`}
+                class="text-gray-300 hover:text-[#0d9488] text-sm transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Contact</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a
+              href="mailto:ski.inc100@gmail.com"
+              class="text-gray-300 hover:text-[#0d9488] transition-colors duration-200"
+            >
+              ski.inc100@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/message/WHATSAPP"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-300 hover:text-[#0d9488] transition-colors duration-200"
+            >
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skiinc.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-300 hover:text-[#0d9488] transition-colors duration-200"
+            >
+              skiinc.ca
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <p class="text-center text-gray-400 text-sm">
+        &copy; 2026 SKI Education Network
+      </p>
+    </div>
+  </div>
+</footer>

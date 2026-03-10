@@ -1,4 +1,7 @@
 ---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -23,8 +26,10 @@ const { title, description = 'SKI Education Network - MCAT Preparation & Medical
   </style>
 </head>
 <body class="font-[Inter,system-ui,sans-serif] text-gray-700 bg-white">
+  <Navbar />
   <main>
     <slot />
   </main>
+  <Footer />
 </body>
 </html>
