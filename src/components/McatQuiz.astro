@@ -1,0 +1,337 @@
+---
+import questions from '../data/mcat-questions.json';
+const questionsJson = JSON.stringify(questions);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Tailwind safelist: classes used dynamically in JS -->
+<!--
+  bg-green-50 bg-red-50 bg-green-100 bg-red-100
+  border-green-500 border-red-500 border-[#0d9488] border-gray-200
+  text-green-700 text-red-700 text-green-800 text-red-800
+  ring-2 ring-[#0d9488] ring-green-500 ring-red-500
+  bg-[#0d9488] bg-[#1e3a5f] bg-[#0f766e] bg-[#2d5a8e]
+  bg-green-500 bg-red-500 bg-gray-200
+  text-white text-gray-600 text-gray-700 text-gray-500
+  w-full rounded-xl rounded-lg p-6 p-4 p-5 px-6 px-8 py-3
+  cursor-pointer hover:border-[#0d9488] hover:shadow-md
+  opacity-50 cursor-not-allowed pointer-events-none
+  transition-all duration-200 shadow-sm
+  mb-2 mb-3 mb-4 mb-6 mb-8 mt-4 mt-6
+  text-sm text-base text-lg text-xl text-2xl text-3xl
+  font-medium font-semibold font-bold
+  flex items-center justify-between justify-center gap-2 gap-3 gap-4
+  grid grid-cols-1 grid-cols-2 md:grid-cols-2
+  space-y-3 space-y-4
+  h-2 h-3
+  inline-block
+-->
+
+<div id="mcat-quiz" class="w-full">
+  <!-- Start Screen -->
+  <div id="quiz-start" class="text-center py-8">
+    <div class="mb-6">
+      <svg class="w-16 h-16 mx-auto text-[#0d9488] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+      <h2 class="text-2xl font-bold text-[#1e3a5f] mb-3">Test Your MCAT Knowledge</h2>
+      <p class="text-gray-600 max-w-lg mx-auto mb-2">
+        Challenge yourself with 12 sample questions across all four MCAT sections. Each question includes a detailed explanation to help you learn.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mt-4 text-sm text-gray-500">
+        <span class="bg-gray-100 px-3 py-1 rounded-full">12 Questions</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full">4 Sections</span>
+        <span class="bg-gray-100 px-3 py-1 rounded-full">Instant Feedback</span>
+      </div>
+    </div>
+    <button id="btn-start" class="bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0f766e] transition-colors duration-200">
+      Begin Quiz
+    </button>
+  </div>
+
+  <!-- Question Screen -->
+  <div id="quiz-question" class="hidden">
+    <div id="section-badge" class="inline-block bg-[#1e3a5f] text-white text-sm font-medium px-4 py-1 rounded-full mb-4"></div>
+
+    <!-- Progress -->
+    <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
+      <span id="progress-text"></span>
+      <span id="score-text"></span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
+      <div id="progress-bar" class="bg-[#0d9488] h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+    </div>
+
+    <!-- Question -->
+    <h3 id="question-text" class="text-lg font-semibold text-gray-700 mb-6"></h3>
+
+    <!-- Options -->
+    <div id="options-container" class="space-y-3 mb-6"></div>
+
+    <!-- Check Answer Button -->
+    <button id="btn-check" class="w-full bg-[#0d9488] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 opacity-50 cursor-not-allowed" disabled>
+      Check Answer
+    </button>
+
+    <!-- Explanation (hidden until answer checked) -->
+    <div id="explanation-box" class="hidden mt-6 p-5 rounded-xl border">
+      <div id="explanation-header" class="font-semibold mb-2"></div>
+      <p id="explanation-text" class="text-gray-600 text-sm leading-relaxed"></p>
+      <button id="btn-next" class="mt-4 w-full bg-[#1e3a5f] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#2d5a8e] transition-colors duration-200">
+        Next Question
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="quiz-results" class="hidden text-center py-8">
+    <div id="results-icon" class="text-5xl mb-4"></div>
+    <h2 id="results-title" class="text-2xl font-bold text-[#1e3a5f] mb-2"></h2>
+    <p id="results-score" class="text-lg text-gray-600 mb-8"></p>
+
+    <!-- Section Breakdown -->
+    <div id="section-breakdown" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-left"></div>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button id="btn-retry" class="bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0f766e] transition-colors duration-200">
+        Try Again
+      </button>
+      <a id="btn-explore" href="" class="inline-block bg-[#1e3a5f] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#2d5a8e] transition-colors duration-200">
+        Explore MCAT Prep Program
+      </a>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ questionsJson, base }}>
+  const questions = JSON.parse(questionsJson);
+
+  const sectionColors = {
+    'Biological and Biochemical Foundations': '#0d9488',
+    'Chemical and Physical Foundations': '#1e3a5f',
+    'Psychological, Social, and Biological Foundations': '#7c3aed',
+    'Critical Analysis and Reasoning Skills': '#dc2626'
+  };
+
+  let currentIndex = 0;
+  let selectedOption = -1;
+  let answered = false;
+  let score = 0;
+  let sectionScores = {};
+
+  // Initialize section scores
+  const sections = [...new Set(questions.map(q => q.section))];
+  sections.forEach(s => { sectionScores[s] = { correct: 0, total: 0 }; });
+  questions.forEach(q => { sectionScores[q.section].total++; });
+
+  // DOM refs
+  const startScreen = document.getElementById('quiz-start');
+  const questionScreen = document.getElementById('quiz-question');
+  const resultsScreen = document.getElementById('quiz-results');
+  const sectionBadge = document.getElementById('section-badge');
+  const progressText = document.getElementById('progress-text');
+  const scoreText = document.getElementById('score-text');
+  const progressBar = document.getElementById('progress-bar');
+  const questionText = document.getElementById('question-text');
+  const optionsContainer = document.getElementById('options-container');
+  const btnCheck = document.getElementById('btn-check');
+  const explanationBox = document.getElementById('explanation-box');
+  const explanationHeader = document.getElementById('explanation-header');
+  const explanationText = document.getElementById('explanation-text');
+  const btnNext = document.getElementById('btn-next');
+  const btnStart = document.getElementById('btn-start');
+  const btnRetry = document.getElementById('btn-retry');
+  const btnExplore = document.getElementById('btn-explore');
+
+  // Set explore link
+  btnExplore.href = base + '/mcat-prep';
+
+  function showScreen(screen) {
+    startScreen.classList.add('hidden');
+    questionScreen.classList.add('hidden');
+    resultsScreen.classList.add('hidden');
+    screen.classList.remove('hidden');
+  }
+
+  function renderQuestion() {
+    const q = questions[currentIndex];
+    selectedOption = -1;
+    answered = false;
+
+    // Section badge
+    sectionBadge.textContent = q.section;
+    const color = sectionColors[q.section] || '#1e3a5f';
+    sectionBadge.style.backgroundColor = color;
+
+    // Progress
+    progressText.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
+    scoreText.textContent = `Score: ${score}/${currentIndex}`;
+    progressBar.style.width = `${((currentIndex) / questions.length) * 100}%`;
+
+    // Question
+    questionText.textContent = q.question;
+
+    // Options
+    optionsContainer.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'w-full text-left p-4 rounded-xl border-2 border-gray-200 bg-white hover:border-[#0d9488] hover:shadow-md transition-all duration-200 cursor-pointer';
+      btn.textContent = opt;
+      btn.setAttribute('data-index', i);
+      btn.addEventListener('click', () => selectOption(i));
+      optionsContainer.appendChild(btn);
+    });
+
+    // Reset check button
+    btnCheck.disabled = true;
+    btnCheck.classList.add('opacity-50', 'cursor-not-allowed');
+    btnCheck.classList.remove('hover:bg-[#0f766e]');
+
+    // Hide explanation
+    explanationBox.classList.add('hidden');
+
+    showScreen(questionScreen);
+  }
+
+  function selectOption(index) {
+    if (answered) return;
+    selectedOption = index;
+
+    // Update option styles
+    const buttons = optionsContainer.querySelectorAll('button');
+    buttons.forEach((btn, i) => {
+      btn.className = 'w-full text-left p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer';
+      if (i === index) {
+        btn.classList.add('border-[#0d9488]', 'ring-2', 'ring-[#0d9488]', 'bg-gray-50');
+      } else {
+        btn.classList.add('border-gray-200', 'bg-white', 'hover:border-[#0d9488]', 'hover:shadow-md');
+      }
+    });
+
+    // Enable check button
+    btnCheck.disabled = false;
+    btnCheck.classList.remove('opacity-50', 'cursor-not-allowed');
+    btnCheck.classList.add('hover:bg-[#0f766e]');
+  }
+
+  function checkAnswer() {
+    if (answered || selectedOption === -1) return;
+    answered = true;
+
+    const q = questions[currentIndex];
+    const isCorrect = selectedOption === q.correctIndex;
+
+    if (isCorrect) {
+      score++;
+      sectionScores[q.section].correct++;
+    }
+
+    // Update option styles
+    const buttons = optionsContainer.querySelectorAll('button');
+    buttons.forEach((btn, i) => {
+      btn.classList.remove('hover:border-[#0d9488]', 'hover:shadow-md', 'cursor-pointer', 'ring-2', 'ring-[#0d9488]');
+      btn.classList.add('pointer-events-none');
+
+      if (i === q.correctIndex) {
+        btn.className = 'w-full text-left p-4 rounded-xl border-2 border-green-500 bg-green-50 text-green-800 font-medium pointer-events-none transition-all duration-200';
+      } else if (i === selectedOption && !isCorrect) {
+        btn.className = 'w-full text-left p-4 rounded-xl border-2 border-red-500 bg-red-50 text-red-800 pointer-events-none transition-all duration-200';
+      } else {
+        btn.className = 'w-full text-left p-4 rounded-xl border-2 border-gray-200 bg-white text-gray-400 pointer-events-none transition-all duration-200';
+      }
+    });
+
+    // Hide check button
+    btnCheck.classList.add('hidden');
+
+    // Show explanation
+    explanationBox.classList.remove('hidden');
+    if (isCorrect) {
+      explanationBox.className = 'mt-6 p-5 rounded-xl border border-green-200 bg-green-50';
+      explanationHeader.textContent = 'Correct!';
+      explanationHeader.className = 'font-semibold mb-2 text-green-700';
+    } else {
+      explanationBox.className = 'mt-6 p-5 rounded-xl border border-red-200 bg-red-50';
+      explanationHeader.textContent = 'Incorrect';
+      explanationHeader.className = 'font-semibold mb-2 text-red-700';
+    }
+    explanationText.textContent = q.explanation;
+
+    // Update button text for last question
+    if (currentIndex === questions.length - 1) {
+      btnNext.textContent = 'See Results';
+    }
+  }
+
+  function nextQuestion() {
+    currentIndex++;
+    if (currentIndex >= questions.length) {
+      showResults();
+    } else {
+      btnCheck.classList.remove('hidden');
+      renderQuestion();
+    }
+  }
+
+  function showResults() {
+    const pct = Math.round((score / questions.length) * 100);
+    let title, icon;
+    if (score >= 10) {
+      title = 'Excellent!';
+      icon = '\u{1F31F}';
+    } else if (score >= 7) {
+      title = 'Good Effort!';
+      icon = '\u{1F44D}';
+    } else {
+      title = 'Keep Studying!';
+      icon = '\u{1F4DA}';
+    }
+
+    document.getElementById('results-icon').textContent = icon;
+    document.getElementById('results-title').textContent = title;
+    document.getElementById('results-score').textContent = `You scored ${score} out of ${questions.length} (${pct}%)`;
+
+    // Section breakdown
+    const breakdown = document.getElementById('section-breakdown');
+    breakdown.innerHTML = '';
+    sections.forEach(section => {
+      const s = sectionScores[section];
+      const color = sectionColors[section] || '#1e3a5f';
+      const card = document.createElement('div');
+      card.className = 'p-4 rounded-xl border border-gray-200 bg-white';
+
+      const barWidth = s.total > 0 ? (s.correct / s.total) * 100 : 0;
+      card.innerHTML = `
+        <div class="text-sm font-semibold text-gray-700 mb-2">${section}</div>
+        <div class="flex items-center gap-3">
+          <div class="flex-1 bg-gray-200 rounded-full h-3">
+            <div class="h-3 rounded-full transition-all duration-500" style="width: ${barWidth}%; background-color: ${color}"></div>
+          </div>
+          <span class="text-sm font-bold" style="color: ${color}">${s.correct}/${s.total}</span>
+        </div>
+      `;
+      breakdown.appendChild(card);
+    });
+
+    showScreen(resultsScreen);
+  }
+
+  function resetQuiz() {
+    currentIndex = 0;
+    selectedOption = -1;
+    answered = false;
+    score = 0;
+    sections.forEach(s => { sectionScores[s].correct = 0; });
+    btnCheck.classList.remove('hidden');
+    btnNext.textContent = 'Next Question';
+    renderQuestion();
+  }
+
+  // Event listeners
+  btnStart.addEventListener('click', () => renderQuestion());
+  btnCheck.addEventListener('click', checkAnswer);
+  btnNext.addEventListener('click', nextQuestion);
+  btnRetry.addEventListener('click', resetQuiz);
+</script>

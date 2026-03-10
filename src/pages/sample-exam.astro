@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import McatQuiz from '../components/McatQuiz.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Sample MCAT Exam" description="Test your MCAT knowledge with our free interactive sample exam featuring 12 questions across all four MCAT sections.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1e3a5f] to-[#2d5a8e] text-white py-16 px-4 text-center">
+    <h1 class="text-4xl font-bold mb-4">MCAT Sample Exam</h1>
+    <p class="text-lg text-gray-200 max-w-2xl mx-auto">Challenge yourself with real MCAT-style questions and see where you stand</p>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="py-12 px-4 max-w-3xl mx-auto">
+    <McatQuiz />
+  </section>
+
+  <!-- Download Section -->
+  <section class="bg-gray-50 py-12 px-4 text-center">
+    <h2 class="text-2xl font-bold text-[#1e3a5f] mb-4">Prefer a Paper Format?</h2>
+    <p class="text-gray-600 mb-6">Download our sample MCAT exam as a printable document</p>
+    <a href={`${base}/sample-paper`} class="inline-block bg-[#1e3a5f] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#2d5a8e] transition-colors">
+      View Printable Version
+    </a>
+  </section>
+</BaseLayout>

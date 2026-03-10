@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import questions from '../data/mcat-questions.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const sections = [
+  'Biological and Biochemical Foundations',
+  'Chemical and Physical Foundations',
+  'Psychological, Social, and Biological Foundations',
+  'Critical Analysis and Reasoning Skills'
+];
+
+const questionsBySection = sections.map(section => ({
+  section,
+  questions: questions.filter(q => q.section === section)
+}));
+
+const answerKey = questions.map(q => ({
+  id: q.id,
+  answer: String.fromCharCode(65 + q.correctIndex),
+  option: q.options[q.correctIndex]
+}));
+---
+<BaseLayout title="Printable MCAT Sample Paper" description="Printable MCAT sample examination with 12 questions across all four sections. Print or save as PDF for offline study.">
+
+  <!-- Print Button (hidden in print) -->
+  <div class="print:hidden bg-gray-50 border-b border-gray-200 py-4 px-4">
+    <div class="max-w-3xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h2 class="text-lg font-semibold text-[#1e3a5f]">Printable Sample Paper</h2>
+        <p class="text-sm text-gray-500">Print this page or save as PDF for offline study</p>
+      </div>
+      <div class="flex gap-3">
+        <button onclick="window.print()" class="bg-[#1e3a5f] text-white font-semibold px-6 py-2 rounded-lg hover:bg-[#2d5a8e] transition-colors duration-200 text-sm">
+          Print / Save as PDF
+        </button>
+        <a href={`${base}/sample-exam`} class="bg-white text-[#1e3a5f] font-semibold px-6 py-2 rounded-lg border border-[#1e3a5f] hover:bg-gray-50 transition-colors duration-200 text-sm">
+          Back to Interactive Quiz
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper Content -->
+  <div class="max-w-3xl mx-auto px-4 py-10 print:py-0 print:px-0 print:max-w-none">
+
+    <!-- Paper Header -->
+    <header class="text-center mb-10 print:mb-8">
+      <h1 class="text-2xl font-bold text-[#1e3a5f] print:text-black mb-2">SKI Education Network</h1>
+      <h2 class="text-xl font-semibold text-gray-700 print:text-black mb-1">MCAT Sample Examination</h2>
+      <div class="w-24 h-1 bg-[#0d9488] mx-auto mt-3 print:bg-black"></div>
+    </header>
+
+    <!-- Instructions -->
+    <section class="mb-10 p-6 bg-gray-50 rounded-xl print:bg-white print:border print:border-gray-300 print:rounded-none print:p-4">
+      <h3 class="text-lg font-bold text-[#1e3a5f] print:text-black mb-3">Instructions</h3>
+      <ul class="text-sm text-gray-700 print:text-black space-y-2 list-disc list-inside">
+        <li>This sample exam contains <strong>12 questions</strong> across all four MCAT sections.</li>
+        <li>Select the <strong>best answer</strong> for each question from the four options provided.</li>
+        <li>Mark your answers clearly. An answer key is provided at the end of this document.</li>
+        <li>Time yourself if desired: aim for approximately <strong>1.5 minutes per question</strong> (18 minutes total).</li>
+        <li>This is a <strong>practice exam only</strong> and does not represent the full length or difficulty distribution of the actual MCAT.</li>
+      </ul>
+    </section>
+
+    <!-- Questions by Section -->
+    {questionsBySection.map((group, groupIdx) => (
+      <section class={`mb-10 ${groupIdx > 0 ? 'print:break-before-page' : ''}`}>
+        <div class="flex items-center gap-3 mb-6 pb-3 border-b-2 border-[#1e3a5f] print:border-black">
+          <span class="text-sm font-bold text-white bg-[#1e3a5f] print:bg-black px-3 py-1 rounded">Section {groupIdx + 1}</span>
+          <h3 class="text-lg font-bold text-[#1e3a5f] print:text-black">{group.section}</h3>
+        </div>
+
+        <div class="space-y-8">
+          {group.questions.map((q) => (
+            <div class="print:break-inside-avoid">
+              <p class="font-semibold text-gray-800 print:text-black mb-3">
+                <span class="text-[#0d9488] print:text-black">{q.id}.</span> {q.question}
+              </p>
+              <div class="ml-4 space-y-2">
+                {q.options.map((opt) => (
+                  <div class="flex items-start gap-2 text-gray-700 print:text-black">
+                    <span class="inline-block w-5 h-5 mt-0.5 rounded-full border-2 border-gray-400 print:border-black shrink-0"></span>
+                    <span class="text-sm">{opt}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- Answer Key -->
+    <section class="print:break-before-page mt-16 pt-10 border-t-2 border-[#1e3a5f] print:border-black">
+      <h3 class="text-xl font-bold text-[#1e3a5f] print:text-black mb-6 text-center">Answer Key</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-x-8 gap-y-3">
+        {answerKey.map((item) => (
+          <div class="flex items-start gap-2 text-sm print:break-inside-avoid">
+            <span class="font-bold text-[#1e3a5f] print:text-black shrink-0">{item.id}.</span>
+            <span class="text-gray-700 print:text-black">
+              <strong>{item.answer})</strong> {item.option.substring(3)}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 p-4 bg-[#0d9488]/10 rounded-lg print:bg-white print:border print:border-gray-300 text-center">
+        <p class="text-sm text-gray-600 print:text-black">
+          For detailed explanations and an interactive version of this exam, visit our website at
+          <strong>skieducation.github.io/skieducation-website/sample-exam</strong>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  @media print {
+    /* Hide Navbar and Footer in print */
+    :global(nav),
+    :global(footer) {
+      display: none !important;
+    }
+
+    :global(body) {
+      font-size: 11pt;
+      color: black;
+      background: white;
+    }
+
+    :global(main) {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Clean page margins */
+    @page {
+      margin: 1.5cm 2cm;
+    }
+  }
+</style>

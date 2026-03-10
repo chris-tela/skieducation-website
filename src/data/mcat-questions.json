@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "section": "Biological and Biochemical Foundations",
+    "question": "Phosphofructokinase-1 (PFK-1) catalyzes the phosphorylation of fructose-6-phosphate to fructose-1,6-bisphosphate in glycolysis. This reaction is considered the first committed step of glycolysis because:",
+    "options": [
+      "A) It is the first irreversible reaction unique to the glycolytic pathway",
+      "B) It is the fastest reaction in the glycolytic pathway",
+      "C) It produces the first phosphorylated intermediate in glycolysis",
+      "D) It requires the most ATP of any glycolytic reaction"
+    ],
+    "correctIndex": 0,
+    "explanation": "The PFK-1 reaction is the first committed step of glycolysis because it is the first irreversible reaction that is unique to the glycolytic pathway. While hexokinase also catalyzes an irreversible reaction, glucose-6-phosphate can be diverted to other pathways (e.g., the pentose phosphate pathway or glycogenesis). Once fructose-1,6-bisphosphate is formed, the molecule is committed to being cleaved into glyceraldehyde-3-phosphate and DHAP, proceeding through glycolysis."
+  },
+  {
+    "id": 2,
+    "section": "Biological and Biochemical Foundations",
+    "question": "During DNA replication, primase plays an essential role. Which of the following best describes the function of primase?",
+    "options": [
+      "A) It unwinds the double-stranded DNA at the replication fork",
+      "B) It synthesizes short RNA primers complementary to the template strand",
+      "C) It removes RNA primers and replaces them with DNA nucleotides",
+      "D) It joins Okazaki fragments on the lagging strand"
+    ],
+    "correctIndex": 1,
+    "explanation": "Primase is an RNA polymerase that synthesizes short RNA primers (approximately 10 nucleotides) complementary to the template DNA strand. These primers provide the free 3'-OH group that DNA polymerase III requires to begin DNA synthesis. Helicase unwinds the DNA (option A), DNA polymerase I removes RNA primers and replaces them with DNA (option C), and DNA ligase joins Okazaki fragments (option D)."
+  },
+  {
+    "id": 3,
+    "section": "Biological and Biochemical Foundations",
+    "question": "A protein synthesized on the rough endoplasmic reticulum is destined for secretion. In the Golgi apparatus, this protein undergoes which of the following modifications?",
+    "options": [
+      "A) Removal of introns from the mRNA encoding the protein",
+      "B) Addition and modification of carbohydrate groups to form glycoproteins",
+      "C) Phosphorylation of tyrosine residues for signal transduction",
+      "D) Folding into its tertiary structure by chaperone proteins"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Golgi apparatus is responsible for modifying, sorting, and packaging proteins for secretion or delivery to other organelles. A key function is glycosylation \u2014 the addition and modification of carbohydrate chains (oligosaccharides) to proteins, producing glycoproteins. Intron removal (option A) occurs during mRNA processing in the nucleus. Tyrosine phosphorylation (option C) is a cytoplasmic signaling event. Protein folding (option D) primarily occurs in the endoplasmic reticulum with the help of chaperones like BiP."
+  },
+  {
+    "id": 4,
+    "section": "Chemical and Physical Foundations",
+    "question": "A buffer solution is prepared using acetic acid (pKa = 4.76) and sodium acetate. If the concentration of acetic acid is 0.20 M and the concentration of sodium acetate is 0.40 M, what is the pH of the solution?",
+    "options": [
+      "A) 4.46",
+      "B) 4.76",
+      "C) 5.06",
+      "D) 5.36"
+    ],
+    "correctIndex": 2,
+    "explanation": "Using the Henderson-Hasselbalch equation: pH = pKa + log([A\u207b]/[HA]). Substituting the values: pH = 4.76 + log(0.40/0.20) = 4.76 + log(2) = 4.76 + 0.30 = 5.06. The ratio of conjugate base to weak acid is 2:1, which shifts the pH above the pKa by log(2) \u2248 0.30 pH units."
+  },
+  {
+    "id": 5,
+    "section": "Chemical and Physical Foundations",
+    "question": "A researcher observes that the rate of a nucleophilic substitution reaction doubles when the concentration of the nucleophile is doubled, while the rate is unaffected by changes in substrate concentration beyond a certain point. The reaction also proceeds with racemization at the chiral center. This reaction most likely proceeds via which mechanism?",
+    "options": [
+      "A) SN2, because the rate depends on nucleophile concentration",
+      "B) SN1, because the rate is independent of substrate concentration at saturation and produces racemization",
+      "C) SN1, because the reaction shows first-order kinetics overall",
+      "D) SN2, because the reaction involves inversion of configuration"
+    ],
+    "correctIndex": 2,
+    "explanation": "The key observations are: (1) the reaction shows racemization at the chiral center, and (2) the rate eventually becomes independent of substrate concentration. SN1 reactions proceed through a planar carbocation intermediate, which can be attacked from either face, leading to racemization. The rate-determining step is the formation of the carbocation (unimolecular), making the overall kinetics first-order. The observation about nucleophile concentration affecting rate can occur when the nucleophilic attack partially competes with the ionization step, but the racemization is the definitive indicator of an SN1 mechanism. SN2 reactions produce inversion of configuration (Walden inversion), not racemization."
+  },
+  {
+    "id": 6,
+    "section": "Chemical and Physical Foundations",
+    "question": "Blood flows through an artery that narrows due to atherosclerotic plaque buildup. According to Bernoulli's principle, as the cross-sectional area of the artery decreases, what happens to the blood flow velocity and the lateral pressure on the vessel wall at the narrowed region?",
+    "options": [
+      "A) Velocity increases; lateral pressure increases",
+      "B) Velocity decreases; lateral pressure increases",
+      "C) Velocity increases; lateral pressure decreases",
+      "D) Velocity decreases; lateral pressure decreases"
+    ],
+    "correctIndex": 2,
+    "explanation": "According to the continuity equation (A\u2081v\u2081 = A\u2082v\u2082), when the cross-sectional area decreases, the velocity of blood must increase to maintain constant flow rate. Bernoulli's principle states that in a flowing fluid, an increase in velocity corresponds to a decrease in lateral (static) pressure. This is expressed as: P + \u00bdpv\u00b2 + pgh = constant. As velocity (v) increases, the pressure (P) term must decrease. This principle explains why atherosclerotic plaques can paradoxically reduce the lateral pressure at the point of narrowing, even though the total energy of the fluid is conserved."
+  },
+  {
+    "id": 7,
+    "section": "Psychological, Social, and Biological Foundations",
+    "question": "According to Piaget's theory of cognitive development, a child who can solve conservation tasks (understanding that quantity remains the same despite changes in appearance) but cannot yet think abstractly about hypothetical situations is most likely in which stage?",
+    "options": [
+      "A) Sensorimotor stage",
+      "B) Preoperational stage",
+      "C) Concrete operational stage",
+      "D) Formal operational stage"
+    ],
+    "correctIndex": 2,
+    "explanation": "The concrete operational stage (approximately ages 7-11) is characterized by the ability to perform logical operations on concrete objects, including conservation tasks (understanding that volume, mass, or number is conserved despite changes in shape or arrangement). However, children in this stage cannot yet engage in abstract, hypothetical reasoning \u2014 that ability develops in the formal operational stage (age 12+). The sensorimotor stage (birth-2 years) involves learning through sensory experiences and motor actions. The preoperational stage (ages 2-7) is characterized by symbolic thinking but an inability to perform logical operations, including conservation."
+  },
+  {
+    "id": 8,
+    "section": "Psychological, Social, and Biological Foundations",
+    "question": "A large epidemiological study finds that individuals living in neighborhoods with limited access to grocery stores, healthcare facilities, and safe recreational spaces have significantly higher rates of obesity, diabetes, and cardiovascular disease. This finding best illustrates which concept?",
+    "options": [
+      "A) Biological determinism of disease",
+      "B) Social determinants of health",
+      "C) The biomedical model of health",
+      "D) Illness as individual behavioral choice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Social determinants of health are the conditions in the environments where people live, learn, work, and play that affect a wide range of health outcomes. These include factors such as socioeconomic status, education, neighborhood and physical environment, employment, social support networks, and access to healthcare. The scenario describes how environmental conditions (food access, healthcare availability, safe spaces for exercise) \u2014 rather than individual biological factors or personal choices alone \u2014 drive health disparities. This stands in contrast to the biomedical model, which focuses narrowly on biological causes of disease, and biological determinism, which attributes outcomes to genetics."
+  },
+  {
+    "id": 9,
+    "section": "Psychological, Social, and Biological Foundations",
+    "question": "A patient with bilateral damage to the amygdala would most likely exhibit which of the following behavioral changes?",
+    "options": [
+      "A) Inability to form new explicit memories",
+      "B) Impaired recognition and processing of fearful stimuli",
+      "C) Loss of motor coordination and balance",
+      "D) Difficulty producing and comprehending language"
+    ],
+    "correctIndex": 1,
+    "explanation": "The amygdala is a key structure in the limbic system involved in processing emotions, particularly fear and threat detection. Bilateral damage to the amygdala results in impaired ability to recognize fearful facial expressions, reduced fear conditioning, and difficulty assessing potentially threatening situations (as seen in Kl\u00fcver-Bucy syndrome and studies of patient S.M.). Inability to form new explicit memories (option A) is associated with hippocampal damage. Loss of motor coordination (option C) is associated with cerebellar damage. Language difficulties (option D) are associated with damage to Broca's or Wernicke's areas."
+  },
+  {
+    "id": 10,
+    "section": "Critical Analysis and Reasoning Skills",
+    "question": "The principle of patient autonomy holds that competent individuals have the right to make informed decisions about their own medical care, even when those decisions conflict with medical advice. However, critics argue that true autonomy requires not only freedom from coercion but also adequate understanding of complex medical information, which many patients lack. This tension highlights an ongoing debate about the limits of informed consent. Based on this passage, the critics' argument most directly challenges which assumption?",
+    "options": [
+      "A) That physicians always act in the best interest of their patients",
+      "B) That patients possess sufficient medical knowledge to make truly informed decisions",
+      "C) That medical paternalism is never justified under any circumstances",
+      "D) That informed consent forms are legally binding documents"
+    ],
+    "correctIndex": 1,
+    "explanation": "The critics' argument specifically targets the assumption that patients have adequate understanding of complex medical information to exercise genuine autonomy. The passage states that 'true autonomy requires not only freedom from coercion but also adequate understanding of complex medical information, which many patients lack.' This directly challenges the notion that patients can make truly informed decisions, as the 'informed' component of informed consent presupposes sufficient medical literacy and comprehension."
+  },
+  {
+    "id": 11,
+    "section": "Critical Analysis and Reasoning Skills",
+    "question": "Universal healthcare systems aim to provide medical services to all citizens regardless of ability to pay. Proponents argue that such systems reduce overall costs through preventive care and eliminate the administrative overhead of private insurance. Opponents contend that government-run systems lead to longer wait times and reduced incentives for medical innovation. Empirical data from countries with universal systems show mixed results, with some achieving excellent outcomes at lower per-capita costs while others struggle with resource allocation. Which of the following can be most reasonably inferred from the passage?",
+    "options": [
+      "A) Universal healthcare is always more cost-effective than private insurance systems",
+      "B) The success of a universal healthcare system depends on factors beyond whether it is publicly funded",
+      "C) Countries with universal healthcare produce fewer medical innovations",
+      "D) Wait times in universal systems are always longer than in private systems"
+    ],
+    "correctIndex": 1,
+    "explanation": "The passage presents mixed empirical evidence: some countries with universal systems achieve excellent outcomes at lower costs, while others struggle. This variation strongly suggests that the success or failure of a universal system depends on implementation factors (resource allocation, management, infrastructure) beyond simply whether the system is publicly funded. Options A, C, and D all make absolute claims ('always,' 'fewer,' 'always longer') that are contradicted by the passage's emphasis on mixed results."
+  },
+  {
+    "id": 12,
+    "section": "Critical Analysis and Reasoning Skills",
+    "question": "Scientific journals employ peer review to evaluate research quality before publication. Yet studies have shown that peer reviewers often disagree about the merits of the same manuscript, and that the process may be biased toward confirming established paradigms while rejecting novel findings. Some researchers propose open peer review, where reviewer identities and comments are made public, as a solution to increase accountability. However, junior researchers may be reluctant to critically evaluate the work of senior colleagues if their identities are known. The author's discussion of open peer review suggests that:",
+    "options": [
+      "A) Open peer review would completely eliminate bias in scientific publishing",
+      "B) The proposed solution to peer review's problems may introduce new challenges",
+      "C) Traditional peer review has no significant shortcomings",
+      "D) Junior researchers are generally unqualified to review senior researchers' work"
+    ],
+    "correctIndex": 1,
+    "explanation": "The passage presents open peer review as a proposed solution to problems with traditional peer review (disagreement among reviewers, bias toward established paradigms), but then immediately raises a concern: junior researchers may self-censor their critiques of senior colleagues if their identities are known. This structure \u2014 proposing a solution and then identifying its potential drawback \u2014 suggests that the solution may introduce new challenges even as it addresses existing ones. The passage does not claim the solution would completely eliminate bias (A), nor does it suggest traditional review has no shortcomings (C) or that junior researchers are unqualified (D)."
+  }
+]
