@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const curriculumSections = [
+  {
+    name: 'Biological and Biochemical Foundations of Living Systems',
+    topics: 'Molecular biology, biochemistry, cell biology, genetics, organ systems',
+    questions: 59,
+    minutes: 95,
+    color: '#0d9488',
+  },
+  {
+    name: 'Chemical and Physical Foundations of Biological Systems',
+    topics: 'General chemistry, organic chemistry, physics, biochemistry',
+    questions: 59,
+    minutes: 95,
+    color: '#1e3a5f',
+  },
+  {
+    name: 'Psychological, Social, and Biological Foundations of Behavior',
+    topics: 'Psychology, sociology, biology of behavior',
+    questions: 59,
+    minutes: 95,
+    color: '#7c3aed',
+  },
+  {
+    name: 'Critical Analysis and Reasoning Skills (CARS)',
+    topics: 'Comprehension, reasoning within and beyond the text',
+    questions: 53,
+    minutes: 90,
+    color: '#dc2626',
+  },
+];
+
+const features = [
+  'Self-paced preparation materials',
+  'Comprehensive lecture notes (Gen Chem, Orgo, Biochem, Bio, Physics, Math, Psych, CARS)',
+  'Practice question banks',
+  '1:1 tutoring sessions',
+  'MCAT-style practice exams',
+  'Performance analytics and progress tracking',
+  'Admissions guidance',
+];
+
+const faqs = [
+  {
+    question: 'How long should I study for the MCAT?',
+    answer: 'Most students benefit from 3-6 months of dedicated preparation. Our program is self-paced, so you can adjust the timeline to fit your schedule and target test date.',
+  },
+  {
+    question: 'What MCAT score do I need for medical school?',
+    answer: 'Competitive scores vary by school. Canadian medical schools typically look for scores of 510+ (80th percentile). Our program helps you set realistic targets based on your goal schools.',
+  },
+  {
+    question: 'Do you offer 1:1 tutoring?',
+    answer: 'Yes! Our MCAT Certificate Program includes personalized 1:1 tutoring sessions with medical professionals who have excelled on the MCAT.',
+  },
+  {
+    question: 'Can I study at my own pace?',
+    answer: "Absolutely. All materials are self-paced. You'll have ongoing access to lecture notes, question banks, and practice exams.",
+  },
+  {
+    question: 'What subjects does the MCAT cover?',
+    answer: 'The MCAT tests four sections: Biological/Biochemical Foundations, Chemical/Physical Foundations, Psychological/Social/Biological Foundations, and Critical Analysis and Reasoning Skills (CARS).',
+  },
+  {
+    question: 'How do I get started?',
+    answer: 'Contact us at ski.inc100@gmail.com or click "Enroll Now" above. We\'ll schedule an initial consultation to assess your needs and create a personalized study plan.',
+  },
+];
+---
+
+<BaseLayout title="MCAT Preparation" description="Comprehensive MCAT preparation program designed by medical professionals. Personalized study plans, expert tutoring, and practice exams.">
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-br from-[#1e3a5f] to-[#2d5a8e] text-white py-24 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        MCAT Preparation Program
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Comprehensive, structured preparation designed by medical professionals following AAMC guidelines
+      </p>
+      <a
+        href="mailto:ski.inc100@gmail.com?subject=MCAT%20Preparation%20Inquiry"
+        class="inline-block bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0f766e] transition-colors duration-200"
+      >
+        Start Your Prep
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose SKI -->
+  <section class="py-16 px-4 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Why Choose SKI?</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Everything you need to achieve your best MCAT score</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-4xl mb-4">&#x1F4CB;</div>
+        <h3 class="text-lg font-semibold text-[#1e3a5f] mb-2">Personalized Study Plans</h3>
+        <p class="text-gray-600 text-sm">Tailored preparation based on your strengths, weaknesses, and target score</p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-4xl mb-4">&#x1F468;&#x200D;&#x2695;&#xFE0F;</div>
+        <h3 class="text-lg font-semibold text-[#1e3a5f] mb-2">Expert Medical Tutors</h3>
+        <p class="text-gray-600 text-sm">Learn from practicing medical professionals who have excelled on the MCAT</p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-4xl mb-4">&#x1F4C8;</div>
+        <h3 class="text-lg font-semibold text-[#1e3a5f] mb-2">Proven Results</h3>
+        <p class="text-gray-600 text-sm">Our students consistently achieve competitive MCAT scores for top medical schools</p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-4xl mb-4">&#x23F0;</div>
+        <h3 class="text-lg font-semibold text-[#1e3a5f] mb-2">Flexible Scheduling</h3>
+        <p class="text-gray-600 text-sm">Self-paced learning with on-demand 1:1 tutoring sessions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Breakdown -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Curriculum Breakdown</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Master all four MCAT sections with our structured approach</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {curriculumSections.map((section) => (
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden flex">
+            <div class="w-2 shrink-0" style={`background-color: ${section.color}`}></div>
+            <div class="p-6 flex-1">
+              <h3 class="text-lg font-semibold text-[#1e3a5f] mb-2">{section.name}</h3>
+              <p class="text-gray-600 text-sm mb-4">{section.topics}</p>
+              <div class="flex items-center gap-4 text-sm text-gray-500">
+                <span class="font-medium">{section.questions} questions</span>
+                <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                <span class="font-medium">{section.minutes} minutes</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 px-4">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-12">What's Included</h2>
+      <div class="bg-white border-2 border-[#0d9488] rounded-2xl shadow-lg overflow-hidden">
+        <div class="bg-[#1e3a5f] text-white text-center py-8 px-6">
+          <h3 class="text-xl font-semibold mb-2">MCAT Certificate Program</h3>
+          <div class="text-4xl font-bold">CA$300</div>
+        </div>
+        <div class="p-8">
+          <ul class="space-y-4 mb-8">
+            {features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <span class="text-[#0d9488] font-bold mt-0.5 shrink-0">&#x2713;</span>
+                <span class="text-gray-700">{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="mailto:ski.inc100@gmail.com?subject=MCAT%20Program%20Enrollment"
+            class="block w-full text-center bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0f766e] transition-colors duration-200"
+          >
+            Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-3">
+        {faqs.map((faq) => (
+          <details class="group bg-white rounded-xl shadow-sm border border-gray-200">
+            <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-[#1e3a5f] list-none [&::-webkit-details-marker]:hidden">
+              <span>{faq.question}</span>
+              <span class="ml-4 shrink-0 text-gray-400 transition-transform duration-200 group-open:rotate-180">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 text-gray-600 leading-relaxed">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-[#0d9488] py-16 px-4 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Ready to Ace the MCAT?</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Get started with a personalized study plan today.</p>
+    <a
+      href="mailto:ski.inc100@gmail.com?subject=MCAT%20Preparation%20Inquiry"
+      class="inline-block bg-white text-[#0d9488] font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+    >
+      Get Started
+    </a>
+  </section>
+
+</BaseLayout>
