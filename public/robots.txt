@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://skieducation.github.io/skieducation-website/sitemap-index.xml

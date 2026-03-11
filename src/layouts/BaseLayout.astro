@@ -18,6 +18,16 @@ const { title, description = 'SKI Education Network - MCAT Preparation & Medical
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <title>{title} | SKI Education Network</title>
+  <link rel="canonical" href={Astro.url.href} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "SKI Education Network",
+    "url": "https://www.medicaleducationskiedu.com",
+    "description": "MCAT Preparation and Medical School Admissions Consulting",
+    "areaServed": "Global",
+    "sameAs": ["https://skiinc.ca"]
+  })} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
