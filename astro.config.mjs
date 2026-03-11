@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://skieducation.github.io',
+  site: 'https://chris-tela.github.io',
   base: '/skieducation-website',
 
   vite: {
