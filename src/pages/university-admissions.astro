@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="International University Admissions" description="Access over 1,000 programs across Canada and the United States through SKI Education Network's university admissions consulting.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1e3a5f] to-[#162d4a] py-20 px-4 text-center text-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">International University Admissions</h1>
+      <p class="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">Access over 1,000 programs across Canada and the United States — we guide international students from application to arrival</p>
+      <a href="mailto:ski.inc100@gmail.com?subject=University%20Admissions%20Inquiry" class="inline-block bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0b7f74] transition-colors">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Partner Universities -->
+  <section class="py-16 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Partner Universities</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We work with leading Canadian institutions to place international students in top programs</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Toronto Metropolitan University -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-white text-xl font-bold">T</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">Toronto Metropolitan University</h3>
+        <p class="text-sm text-[#0d9488] font-medium mb-3">Toronto, Ontario</p>
+        <p class="text-gray-600 text-sm">A leading urban university known for innovation, career-focused programs, and a vibrant campus in the heart of downtown Toronto.</p>
+      </div>
+      <!-- University of Toronto -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-white text-xl font-bold">U</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">University of Toronto</h3>
+        <p class="text-sm text-[#0d9488] font-medium mb-3">Toronto, Ontario</p>
+        <p class="text-gray-600 text-sm">Canada's top-ranked university offering world-class research opportunities and a diverse range of undergraduate and graduate programs.</p>
+      </div>
+      <!-- Brock University -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-white text-xl font-bold">B</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">Brock University</h3>
+        <p class="text-sm text-[#0d9488] font-medium mb-3">St. Catharines, Ontario</p>
+        <p class="text-gray-600 text-sm">A comprehensive university in the Niagara region with strong co-op programs, small class sizes, and dedicated international student support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1,000+ Programs Stats -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[#1e3a5f] mb-4">Access Over 1,000 Programs</h2>
+      <p class="text-gray-600 mb-12 max-w-2xl mx-auto">From business and engineering to health sciences and the arts, find the right program across Canada and the United States</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <div class="text-4xl font-bold text-[#0d9488] mb-2">1,000+</div>
+          <div class="text-lg font-semibold text-[#1e3a5f] mb-1">Programs</div>
+          <p class="text-gray-600 text-sm">Undergraduate and graduate programs across every major discipline</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <div class="text-4xl font-bold text-[#0d9488] mb-2">50+</div>
+          <div class="text-lg font-semibold text-[#1e3a5f] mb-1">Partner Institutions</div>
+          <p class="text-gray-600 text-sm">Trusted university and college partners across North America</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm">
+          <div class="text-4xl font-bold text-[#0d9488] mb-2">98%</div>
+          <div class="text-lg font-semibold text-[#1e3a5f] mb-1">Acceptance Rate</div>
+          <p class="text-gray-600 text-sm">Our students consistently secure offers from their target institutions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-Step Process -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Your Path to University</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">A simple five-step process from application to your first day on campus</p>
+
+      <!-- Desktop timeline -->
+      <div class="hidden md:block">
+        <div class="flex items-start justify-between relative">
+          <!-- Connecting line -->
+          <div class="absolute top-6 left-[10%] right-[10%] h-0.5 bg-[#0d9488]"></div>
+
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center w-1/5 relative z-10">
+            <div class="w-12 h-12 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3">1</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1 text-sm">Submit Application</h3>
+            <p class="text-gray-600 text-xs px-2">Complete your application with our guided support and document preparation</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center w-1/5 relative z-10">
+            <div class="w-12 h-12 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3">2</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1 text-sm">Select Schools</h3>
+            <p class="text-gray-600 text-xs px-2">Choose the best-fit universities and programs based on your goals</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center w-1/5 relative z-10">
+            <div class="w-12 h-12 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3">3</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1 text-sm">Receive Acceptance</h3>
+            <p class="text-gray-600 text-xs px-2">Get your offer of admission and confirm your enrollment</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-col items-center text-center w-1/5 relative z-10">
+            <div class="w-12 h-12 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3">4</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1 text-sm">Apply for Visas</h3>
+            <p class="text-gray-600 text-xs px-2">Navigate the study permit and visa process with our guidance</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex flex-col items-center text-center w-1/5 relative z-10">
+            <div class="w-12 h-12 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold text-lg mb-3">5</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1 text-sm">Begin Journey</h3>
+            <p class="text-gray-600 text-xs px-2">Arrive on campus prepared and ready to start your academic career</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile timeline (vertical) -->
+      <div class="md:hidden space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold shrink-0">1</div>
+            <div class="w-0.5 h-full bg-[#0d9488] mt-2"></div>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-bold text-[#1e3a5f]">Submit Application</h3>
+            <p class="text-gray-600 text-sm">Complete your application with our guided support and document preparation</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold shrink-0">2</div>
+            <div class="w-0.5 h-full bg-[#0d9488] mt-2"></div>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-bold text-[#1e3a5f]">Select Schools</h3>
+            <p class="text-gray-600 text-sm">Choose the best-fit universities and programs based on your goals</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold shrink-0">3</div>
+            <div class="w-0.5 h-full bg-[#0d9488] mt-2"></div>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-bold text-[#1e3a5f]">Receive Acceptance</h3>
+            <p class="text-gray-600 text-sm">Get your offer of admission and confirm your enrollment</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold shrink-0">4</div>
+            <div class="w-0.5 h-full bg-[#0d9488] mt-2"></div>
+          </div>
+          <div class="pb-4">
+            <h3 class="font-bold text-[#1e3a5f]">Apply for Visas</h3>
+            <p class="text-gray-600 text-sm">Navigate the study permit and visa process with our guidance</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-[#0d9488] text-white rounded-full flex items-center justify-center font-bold shrink-0">5</div>
+          </div>
+          <div>
+            <h3 class="font-bold text-[#1e3a5f]">Begin Journey</h3>
+            <p class="text-gray-600 text-sm">Arrive on campus prepared and ready to start your academic career</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- English Proficiency -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">English Proficiency Testing</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Meet your language requirements with recognized Canadian English proficiency exams</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- CELPIP -->
+        <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-bold text-[#1e3a5f] mb-3">CELPIP</h3>
+          <p class="text-sm text-[#0d9488] font-medium mb-3">Canadian English Language Proficiency Index Program</p>
+          <p class="text-gray-600 text-sm mb-4">A fully computer-delivered English test accepted by Canadian universities and immigration authorities. CELPIP measures listening, reading, writing, and speaking in a single sitting, providing fast results for admissions and study permit applications.</p>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Accepted for university admissions and immigration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Computer-delivered with quick results</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Canadian-focused content and scoring</span>
+            </li>
+          </ul>
+        </div>
+        <!-- CAEL -->
+        <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-bold text-[#1e3a5f] mb-3">CAEL</h3>
+          <p class="text-sm text-[#0d9488] font-medium mb-3">Canadian Academic English Language Assessment</p>
+          <p class="text-gray-600 text-sm mb-4">Designed specifically for academic contexts, CAEL assesses the English skills needed to succeed in a Canadian university environment. The integrated task format mirrors real academic situations students will encounter on campus.</p>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Designed for academic English proficiency</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Integrated tasks reflect university coursework</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+              <span>Widely accepted by Canadian institutions</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-[#0d9488] py-16 px-4 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Start Your University Journey Today</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Connect with our admissions team and take the first step toward studying at a top North American university.</p>
+    <a href="mailto:ski.inc100@gmail.com?subject=University%20Admissions%20Inquiry" class="inline-block bg-white text-[#0d9488] font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Contact Us Today</a>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const team = [
+  { initials: 'SC', name: 'Dr. Sarah Chen', role: 'MCAT Program Director', credential: '15+ years in medical education' },
+  { initials: 'MT', name: 'Michael Torres', role: 'Admissions Consultant', credential: 'Former medical school admissions committee member' },
+  { initials: 'PP', name: 'Dr. Priya Patel', role: 'Academic Advisor', credential: 'Specializing in international medical graduates' },
+  { initials: 'JW', name: 'James Wilson', role: 'Immigration Specialist', credential: 'Licensed immigration consultant' },
+];
+
+const stats = [
+  { value: '40+', label: 'Countries' },
+  { value: '1,000+', label: 'Students' },
+  { value: '98%', label: 'Acceptance Rate' },
+  { value: '5+', label: 'Years of Excellence' },
+];
+---
+<BaseLayout title="About Us" description="Learn about SKI Education Network's mission, team, and global reach in medical education consulting.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1e3a5f] to-[#152d4a] text-white py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">About SKI Education Network</h1>
+      <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">Dedicated to guiding aspiring medical professionals on their journey from dream to practice.</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-16 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-[#1e3a5f] mb-4">Fueling Dreams, Building Futures</h2>
+    <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+      At SKI Education Network, we empower aspiring medical professionals through expert guidance,
+      comprehensive MCAT preparation, and personalized admissions support. Our mission is to remove
+      barriers and create clear pathways for students around the world to achieve their goals in medicine.
+    </p>
+  </section>
+
+  <!-- Team -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Our Team</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Meet the experts behind your success</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {team.map((member) => (
+          <div class="bg-white rounded-xl shadow-sm p-6 text-center hover:shadow-md transition-shadow">
+            <div class="w-20 h-20 rounded-full bg-[#1e3a5f] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              {member.initials}
+            </div>
+            <h3 class="text-lg font-semibold text-[#1e3a5f]">{member.name}</h3>
+            <p class="text-[#0d9488] font-medium text-sm mt-1">{member.role}</p>
+            <p class="text-gray-500 text-sm mt-2">{member.credential}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Reach Stats -->
+  <section class="bg-[#1e3a5f] text-white py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Global Reach</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat) => (
+          <div>
+            <p class="text-4xl md:text-5xl font-bold text-[#0d9488]">{stat.value}</p>
+            <p class="mt-2 text-lg opacity-90">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-12">Get in Touch</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-5">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent" />
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+            <select id="subject" name="subject" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent bg-white">
+              <option value="" disabled selected>Select a subject</option>
+              <option value="mcat">MCAT Preparation</option>
+              <option value="admissions">Medical Admissions</option>
+              <option value="university">University Admissions</option>
+              <option value="immigration">Immigration Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#0d9488] focus:border-transparent resize-vertical"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-[#0d9488] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#0b7d73] transition-colors cursor-pointer">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Contact Info Card -->
+        <div class="space-y-6">
+          <div class="bg-gray-100 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-[#1e3a5f] mb-4">Contact Information</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0d9488] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <div>
+                  <p class="font-medium text-gray-700">Email</p>
+                  <a href="mailto:ski.inc100@gmail.com" class="text-[#0d9488] hover:underline">ski.inc100@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0d9488] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L.05 23.5l5.793-1.52A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.148-1.46l-.37-.218-3.435.9.92-3.36-.24-.38A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/>
+                </svg>
+                <div>
+                  <p class="font-medium text-gray-700">WhatsApp</p>
+                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="text-[#0d9488] hover:underline">Chat with us on WhatsApp</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0d9488] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <div>
+                  <p class="font-medium text-gray-700">Office</p>
+                  <p class="text-gray-500">Location details coming soon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#20bd5a] transition-colors"
+    aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.856L.05 23.5l5.793-1.52A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 01-5.148-1.46l-.37-.218-3.435.9.92-3.36-.24-.38A9.78 9.78 0 012.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82 0 5.422-4.398 9.82-9.82 9.82z"/>
+    </svg>
+  </a>
+
+</BaseLayout>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Immigration Services" description="Navigate the Canadian immigration process with confidence. Student visas, visitor visas, permanent residency — expert legal guidance every step of the way.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-[#1e3a5f] to-[#162d4a] py-20 px-4 text-center text-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Immigration Services</h1>
+      <p class="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">Navigate the Canadian immigration process with confidence — expert guidance for students, visitors, and future permanent residents</p>
+      <a href="mailto:ski.inc100@gmail.com?subject=Immigration%20Inquiry" class="inline-block bg-[#0d9488] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#0b7f74] transition-colors">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Visa Types -->
+  <section class="py-16 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Visa Types We Support</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Whether you are studying, visiting, or settling in Canada, we have you covered</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Student Visa -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="text-4xl mb-4">&#127891;</div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-4">Student Visa</h3>
+        <ul class="space-y-3 text-gray-700 text-left">
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Study permit applications for international students</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Post-graduation work permit (PGWP) guidance</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Designated learning institution (DLI) selection</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Study permit extensions and renewals</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Visitor Visa -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="text-4xl mb-4">&#9992;&#65039;</div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-4">Visitor Visa</h3>
+        <ul class="space-y-3 text-gray-700 text-left">
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Temporary resident visa (TRV) applications</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Family visit and super visa support</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Short-term course and conference travel</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Visa extension and status restoration</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Permanent Residency -->
+      <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow text-center">
+        <div class="text-4xl mb-4">&#127968;</div>
+        <h3 class="text-xl font-bold text-[#1e3a5f] mb-4">Permanent Residency</h3>
+        <ul class="space-y-3 text-gray-700 text-left">
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Express Entry profile optimization</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Provincial Nominee Program (PNP) applications</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Family sponsorship and reunification</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[#0d9488] font-bold mt-0.5">&#10003;</span>
+            <span>Canadian Experience Class (CEC) pathways</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Support -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-[#1e3a5f] mb-4">Expert Legal Support</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">Our team of experienced immigration lawyers provides personalized guidance throughout your application process.</p>
+      <div class="bg-white rounded-xl p-8 md:p-10 text-left">
+        <p class="text-gray-700 mb-4">Immigration law is complex and constantly evolving. A single mistake on your application can lead to delays, rejections, or even inadmissibility. Our legal team stays current with the latest policy changes to ensure your application is accurate, complete, and compelling.</p>
+        <p class="text-gray-700 mb-6">From initial eligibility assessments to document preparation and submission, we handle the details so you can focus on planning your future in Canada.</p>
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+          <div class="flex items-center gap-2 text-gray-700">
+            <span class="text-[#0d9488] font-bold text-lg">&#10003;</span>
+            <span class="font-medium">Licensed Professionals</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-700">
+            <span class="text-[#0d9488] font-bold text-lg">&#10003;</span>
+            <span class="font-medium">Personalized Case Strategy</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-700">
+            <span class="text-[#0d9488] font-bold text-lg">&#10003;</span>
+            <span class="font-medium">End-to-End Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose SKI -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-[#1e3a5f] mb-4">Why Choose SKI for Immigration</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We combine legal expertise with a genuine commitment to your success</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+          <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl">&#128101;</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#1e3a5f] mb-2">Dedicated Case Managers</h3>
+          <p class="text-gray-600 text-sm">A single point of contact who knows your case inside and out</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+          <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl">&#9889;</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#1e3a5f] mb-2">Fast Processing</h3>
+          <p class="text-gray-600 text-sm">We prepare your application promptly to meet all deadlines</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+          <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl">&#127760;</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#1e3a5f] mb-2">Multilingual Support</h3>
+          <p class="text-gray-600 text-sm">Assistance in multiple languages so nothing gets lost in translation</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+          <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl">&#128200;</span>
+          </div>
+          <h3 class="text-lg font-bold text-[#1e3a5f] mb-2">High Success Rate</h3>
+          <p class="text-gray-600 text-sm">Proven track record of successful applications across all visa categories</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-[#0d9488] py-16 px-4 text-center text-white">
+    <h2 class="text-3xl font-bold mb-4">Start Your Immigration Journey</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">Reach out to our immigration team and take the first step toward your new life in Canada.</p>
+    <a href="mailto:ski.inc100@gmail.com?subject=Immigration%20Inquiry" class="inline-block bg-white text-[#0d9488] font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Contact Us Today</a>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const posts = [
+  {
+    title: 'When Should You Take the MCAT?',
+    category: 'MCAT',
+    date: 'March 2026',
+    excerpt: "Timing your MCAT can make or break your application cycle. Here's our guide to choosing the right test date...",
+  },
+  {
+    title: 'Aspiring Physicians: US/Canada Application Timelines',
+    category: 'Admissions',
+    date: 'February 2026',
+    excerpt: 'Understanding the application timeline is crucial for medical school success...',
+  },
+  {
+    title: '10 Tuition-Free Medical Schools to Consider',
+    category: 'Medical Schools',
+    date: 'January 2026',
+    excerpt: "Medical education doesn't have to break the bank. Discover schools that offer full tuition coverage...",
+  },
+];
+---
+
+<BaseLayout title="Blog" description="Insights and guidance for aspiring medical professionals from SKI Education Network">
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-[#1e3a5f] to-[#162d4a] text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
+      <p class="text-xl text-blue-100">Insights and guidance for aspiring medical professionals</p>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="p-6">
+              <span class="inline-block bg-[#0d9488] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                {post.category}
+              </span>
+              <h2 class="text-xl font-bold text-[#1e3a5f] mb-2 leading-snug">{post.title}</h2>
+              <p class="text-sm text-gray-400 mb-3">{post.date}</p>
+              <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{post.excerpt}</p>
+              <a href="#" class="text-[#0d9488] font-semibold text-sm hover:underline">
+                Read More &rarr;
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-lg text-gray-600 mb-6">More articles coming soon. Subscribe to stay updated.</p>
+      <form class="flex flex-col sm:flex-row gap-3 justify-center" onsubmit="return false;">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0d9488] flex-1 max-w-sm"
+        />
+        <button
+          type="button"
+          class="px-6 py-3 bg-[#0d9488] text-white font-semibold rounded-lg hover:bg-[#0b7f74] transition-colors"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>
