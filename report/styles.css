@@ -1,0 +1,246 @@
+/* SKI Education Network — Market Research Report Styles */
+/* Print-optimized for PDF export via browser Print > Save as PDF */
+
+:root {
+  --navy: #1e3a5f;
+  --teal: #0d9488;
+  --dark: #1a1a2e;
+  --gray: #4a5568;
+  --light-gray: #f7fafc;
+  --border: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.7;
+  color: var(--dark);
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0.5in;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  color: var(--navy);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 24pt; border-bottom: 3px solid var(--teal); padding-bottom: 0.3em; }
+h2 { font-size: 18pt; border-bottom: 1px solid var(--border); padding-bottom: 0.2em; }
+h3 { font-size: 14pt; }
+h4 { font-size: 12pt; color: var(--teal); }
+
+p { margin-bottom: 0.8em; text-align: justify; }
+
+/* Cover page */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  text-align: center;
+}
+
+.cover h1 {
+  font-size: 32pt;
+  border: none;
+  margin-bottom: 0.2em;
+}
+
+.cover .subtitle {
+  font-size: 16pt;
+  color: var(--teal);
+  margin-bottom: 2em;
+}
+
+.cover .meta {
+  font-size: 11pt;
+  color: var(--gray);
+  line-height: 2;
+}
+
+/* Table of Contents */
+.toc {
+  page-break-after: always;
+}
+
+.toc h2 {
+  text-align: center;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  padding: 0.4em 0;
+  border-bottom: 1px dotted var(--border);
+}
+
+.toc a {
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 12pt;
+}
+
+.toc a:hover {
+  color: var(--teal);
+}
+
+.toc .section-num {
+  display: inline-block;
+  width: 2em;
+  font-weight: bold;
+  color: var(--teal);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 10pt;
+}
+
+th {
+  background: var(--navy);
+  color: white;
+  padding: 0.6em 0.8em;
+  text-align: left;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 10pt;
+}
+
+td {
+  padding: 0.5em 0.8em;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:nth-child(even) { background: var(--light-gray); }
+
+/* Callout boxes */
+.callout {
+  background: var(--light-gray);
+  border-left: 4px solid var(--teal);
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+.callout-warning {
+  border-left-color: #e53e3e;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.5em 0 1em 1.5em;
+}
+
+li { margin-bottom: 0.3em; }
+
+/* Stats highlight */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.stat-box {
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1em;
+  text-align: center;
+}
+
+.stat-box .number {
+  font-size: 24pt;
+  font-weight: bold;
+  color: var(--teal);
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.stat-box .label {
+  font-size: 9pt;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Recommendation boxes */
+.recommendation {
+  background: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.recommendation h4 {
+  color: #276749;
+  margin-top: 0;
+}
+
+/* Print button */
+.print-btn {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: var(--teal);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 11pt;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  z-index: 100;
+}
+
+.print-btn:hover { background: var(--navy); }
+
+/* Print styles */
+@media print {
+  .print-btn { display: none; }
+
+  body {
+    padding: 0;
+    font-size: 10pt;
+    max-width: none;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.75in;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  table, .stat-grid {
+    page-break-inside: avoid;
+  }
+
+  .cover {
+    page-break-after: always;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  a { color: var(--navy); text-decoration: none; }
+}
